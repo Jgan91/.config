@@ -118,7 +118,13 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
 # 24bit color support
-export TERM="screen-256color"
+export TERM="xterm-256color"
 
 # Storing dotfiles in git bare repo	https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias config='/usr/bin/git --git-dir=/Users/justingan/.config/ --work-tree=/Users/justingan'
+
+# Set CLICOLOR if you want Ansi Colors in iTerm2 
+export CLICOLOR=1
+
+# Set colors to match iTerm2 Terminal Colors
+export TERM=xterm-256color
