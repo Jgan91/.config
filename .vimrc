@@ -1,6 +1,21 @@
 set nocompatible
-set number
-set relativenumber
+
+" line numbers # https://jeffkreeftmeijer.com/vim-number/
+set number relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+" 80 char line
+set colorcolumn=80
+
+" tabs
+set tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
+
+" TODO show whitespace # https://www.reddit.com/r/vim/comments/82yv3p/anyone_know_how_to_get_the_dots_for_leading/
 filetype off
 
 call plug#begin('~/.vim/plugged')
