@@ -33,6 +33,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'ElmCast/elm-vim'
 Plug 'tpope/vim-sensible'
 Plug 'nightsense/seagrey'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -42,3 +45,8 @@ syntax enable
 set background=dark
 colorscheme seagrey-dark
 colorscheme carbonized-dark
+
+" Linting
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new
