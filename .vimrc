@@ -15,7 +15,16 @@ set colorcolumn=80
 " tabs
 set tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 
-" TODO show whitespace # https://www.reddit.com/r/vim/comments/82yv3p/anyone_know_how_to_get_the_dots_for_leading/
+" TODO show whitespace
+" https://www.reddit.com/r/vim/comments/82yv3p/anyone_know_how_to_get_the_dots_for_leading/
+set list
+set listchars=tab:··,space:·,eol:¬,trail:·,nbsp:_
+
+" NERDTree
+map <LEADER>f :NERDTreeToggle<CR>
+autocmd VimEnter * if !argc() | NERDTree | endif
+autocmd BufEnter * if !argc() | NERDTreeMirror | endif
+
 filetype off
 
 call plug#begin('~/.vim/plugged')
